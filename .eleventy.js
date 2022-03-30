@@ -2,10 +2,6 @@ const filters = require('./utils/filters.js')
 
 module.exports = function(eleventyConfig) {
     
-     // Filters
-    Object.keys(filters).forEach((filterName) => {
-        eleventyconfig.addFilter(filterName, filters[filterName])
-    })
     
     const markdownIt = require('markdown-it');
     const markdownItOptions = {
@@ -41,6 +37,11 @@ module.exports = function(eleventyConfig) {
     
     eleventyConfig.addPassthroughCopy('assets');
     eleventyConfig.setUseGitIgnore(false);
+    
+      // Filters
+    Object.keys(filters).forEach((filterName) => {
+        eleventyconfig.addFilter(filterName, filters[filterName])
+    })
 
     return {
         dir: {
