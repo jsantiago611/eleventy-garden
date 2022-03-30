@@ -1,4 +1,11 @@
+const filters = require('./utils/filters.js')
+
 module.exports = function(eleventyConfig) {
+    
+     // Filters
+    Object.keys(filters).forEach((filterName) => {
+        config.addFilter(filterName, filters[filterName])
+    })
     
     const markdownIt = require('markdown-it');
     const markdownItOptions = {
