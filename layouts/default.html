@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script>
+        // if there's a theme id in localstorage, use it on the <html>
+        localStorage.getItem('theme') && 
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    </script>
     {% include 'head.html' %}
 </head>
 <body>
