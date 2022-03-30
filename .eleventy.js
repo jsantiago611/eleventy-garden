@@ -40,7 +40,7 @@ module.exports = function(eleventyConfig) {
     
       // Filters
     Object.keys(filters).forEach((filterName) => {
-        eleventyconfig.addFilter(filterName, filters[filterName])
+        eleventyConfig.addFilter(filterName, filters[filterName])
     })
 
     return {
